@@ -1,8 +1,9 @@
+const overlay = document.querySelector('#overlay');
+const startGame = document.getElementsByClassName('btn__reset')[0];
+const missed = 0;
 const qwerty = document.querySelector('qwerty');
 const phrase = document.querySelector('phrase');
-const missed = 0;
-const startButton = document.getElementsByClassName('btn_reset');
 
-startButton.addEventListener('click', () => {
-    startButton.style.color = 'red';
-})
+startGame.addEventListener('click', () => {
+    overlay.style.display = 'none';
+});
