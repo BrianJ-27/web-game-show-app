@@ -9,3 +9,18 @@ const phrase = document.querySelector('phrase');
 startGame.addEventListener('click', () => {
     overlay.style.display = 'none';
 }); 
+
+const gamePhrases = [
+    'a dog walked to the park',
+    'the boy ran outside the house',
+    'Each man ran beyond the marker',
+    'four gotas ate grass today',
+    'The dog walked to the park'
+];
+
+const getRandomPhraseAsArray = arr => {
+   let randomNmbr = Math.floor(Math.random() * 6);
+    return arr[randomNmbr];
+   }
+
+console.log(getRandomPhraseAsArray());
