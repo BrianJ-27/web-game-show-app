@@ -1,0 +1,24 @@
+{
+  "name": "web-game-show-app",
+  "version": "1.0.0",
+  "description": "My Game Show App ",
+  "main": "index.js",
+  "dependencies": {
+    "eslint-config-rallycoding": "^3.2.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianJ-27/web-game-show-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianJ-27/web-game-show-app/issues"
+  },
+  "homepage": "https://github.com/BrianJ-27/web-game-show-app#readme"
+}
