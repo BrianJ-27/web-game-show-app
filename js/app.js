@@ -24,7 +24,7 @@ startGame.addEventListener('click', () => {
 const getRandomPhraseAsArray = arr => { 
 // generating a random number from 1-5 & using that number to access the index of any array
    let randomArray = arr[Math.floor(Math.random() * 5) +1]; 
- // Return a new character array that split the strings inside the array into a new single line array  
+ // Return a new letter character array for  that split the strings inside the array into a new single line array  
     return randomArray.split('');  
    }
 
@@ -52,7 +52,7 @@ const addPhraseToDisplay = arr =>{
       }
   }
 }
-// call the function to add the phrase array to the game screen
+// pass the singleArray const variable into the function to add the phrase array to the game screen
 addPhraseToDisplay(singleArray);
 
 
