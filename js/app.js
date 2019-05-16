@@ -58,11 +58,13 @@ addPhraseToDisplay(singleArray);
 
 const checkLetter = buttonPicked => {
   let letters = document.querySelectorAll('.letter');
+  let match = null;
   for (let i = 0; i < letters.length; i += 1){
-    if(letters[i] === buttonPicked.innerText){
+    if(letters[i].innerText === buttonPicked.innerText){
       letters[i].className = 'show';
+      match = true;
     }else{
-      letters[i].className = null;
+      letters[i].className = match;
     }
   }
 }
