@@ -1,8 +1,8 @@
 const overlay = document.querySelector('#overlay');
 const startGame = document.getElementsByClassName('btn__reset')[0];
-const missed = 0;
-const qwerty = document.querySelector('qwerty');
-const phrase = document.querySelector('phrase');
+let missed = 0;
+const qwerty = document.querySelector('#qwerty');
+
 
 const phrases = [
     'avengers forever',
@@ -33,7 +33,7 @@ const singleArray = getRandomPhraseAsArray(phrases);
 
 const addPhraseToDisplay = arr =>{
 // get ul element from document and store in the variable phraseUl within this arrow expression
-    let phraseUl = document.querySelector('#phrase ul');
+    let phrase = document.querySelector('#phrase ul');
 /* loop through an array and execute the following tasks: 
     1) create a list element for each array character
     2) each array character/letter & space is being assigned or placed into each newly created li element
@@ -44,7 +44,7 @@ const addPhraseToDisplay = arr =>{
     for (let i = 0; i < arr.length; i += 1) {
       let letter = document.createElement('li'); // Step 1
       letter.innerText = arr[i]; // Step 2
-      phraseUl.appendChild(letter); // Step 3
+      phrase.appendChild(letter); // Step 3
       if (letter.innerHTML !== ' ' ){ // Step 4 
         letter.className = 'letter';
       }else {
@@ -60,15 +60,31 @@ const checkLetter = buttonPicked => {
   let letters = document.querySelectorAll('.letter');
   let match = null;
   for (let i = 0; i < letters.length; i += 1){
-    if(letters[i].innerText === buttonPicked.innerText){
+    if(letters[i].innerText.toUpperCase() === buttonPicked.innerText.toUpperCase()){
       letters[i].className = 'show';
       match = true;
     }else{
-      letters[i].className = match;
+      match = false;
     }
   }
+  return match;
 }
 
-checkLetter();
+qwerty.addEventListener('click', (e) => {
+  let correctButton = e.target;
+  if(correctButton.tagName === 'BUTTON'){
+    correctButton.className = 'chosen';
+    correctButton.disabled = 'true';
+    let letterFound = checkLetter(correctButton);
+    if (letterFound === null){
+        let tries = document.getElementsByClassName('tries');
+        for(let i = 0; i < tries.length; i += 1){
+          let scoreBoard = document.querySelector('ol');
+          scoreBoard.removeChild(tries);
+          missed += 1;  
+        }
+    }
+  }
+})
 
 
