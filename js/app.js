@@ -1,3 +1,6 @@
+/*-----------------------------------------------------------------------------------------------------*/ 
+//                                        **VARIABLES**                                                //
+/*-----------------------------------------------------------------------------------------------------*/
 const startGame = document.getElementsByClassName('btn__reset')[0];
 const overlay = document.querySelector('#overlay');
 const letters = document.getElementsByClassName('letter');
@@ -10,6 +13,10 @@ const phrases = [
     'the incredible hulk',
     'in the endgame now',
 ];
+
+/*-----------------------------------------------------------------------------------------------------*/ 
+//                                        **START GAME LISTENER**                                      //
+/*-----------------------------------------------------------------------------------------------------*/
 
 //** when a user clicks on the start button, the screen overlay is hidden to show gameboard 
 startGame.addEventListener('click', () => {
@@ -26,8 +33,10 @@ startGame.addEventListener('click', () => {
 // Note to self: character in the array is referring to the the arr[i] in my programming.. 
 
 /*-----------------------------------------------------------------------------------------------------*/ 
-//                                        **FUNCTIONS**
+//                                        **FUNCTIONS**                                                //
 /*-----------------------------------------------------------------------------------------------------*/
+
+// Resets the game when button is clicked **This function is called inside the start game listener
 const reset = () => {
   let tries = document.querySelectorAll('.tries');
     tries.forEach((element) =>{
@@ -56,16 +65,13 @@ const getRandomPhraseAsArray = arr => {
    }
 
 const addPhraseToDisplay = arr =>{
-// get ul element from document and store in the variable phraseUl within this arrow expression
-    
 /* loop through an array and execute the following tasks: 
     1) create a list element for each array character
     2) each array character/letter & space is being assigned or placed into each newly created li element
     3) we then append/ add the newly created li element to the DOM 
     4) we test to see if the content with the li element is not equal to a space. If true then we add the className "letter" to the li element and its accompanying styles
        if it test to false then we apply the className "space" to the li element along with its accompanying styles 
-*/  
-    
+*/    
     for (let i = 0; i < arr.length; i += 1) {
       let letter = document.createElement('li'); // Step 1
       letter.innerText = arr[i]; // Step 2
@@ -78,7 +84,7 @@ const addPhraseToDisplay = arr =>{
   }
 }
 
-//The checkLetter function will be used inside of the event listener you’ll write in the next step.
+//** The checkLetter function will be used inside of the event listener you’ll write in the next step.
 const checkLetter = buttonPicked => {
 // should get all of the elements with a class of “letter” which was defined at the top of script
   let btn_match = false;
@@ -95,11 +101,14 @@ the button the player has chosen.*/
 
 const showClass = document.getElementsByClassName('show');
 
+//** the checkWin function will also be called inside the event listener
 const checkWin = () => {
+  //compare the length of the li characters in the array to the length of shown/correct letters in the phrase
   if(letters.length === showClass.length){
     overlay.style.display = 'flex';
     overlay.className = 'win';
     startGame.textContent = 'Another Round ?';
+  //However if the user does not guess the right answer the 5th time the user loses and the lose overlay is shown   
   }else if (missed >= 5) {
     overlay.style.display = 'flex';
     overlay.className = 'lose';
@@ -107,7 +116,11 @@ const checkWin = () => {
   }
 };
 
-//Get the 
+
+/*-----------------------------------------------------------------------------------------------------*/ 
+//                                        **EVENT LISTENERS**                                          //
+/*-----------------------------------------------------------------------------------------------------*/
+//Get the div element with the id of "qwerty" and assign it const variable "qwerty"
 const qwerty = document.querySelector('#qwerty');
 
 qwerty.addEventListener('click', e => {
@@ -117,7 +130,8 @@ qwerty.addEventListener('click', e => {
    correctButton.disabled = true;
    const  letterFound = checkLetter(correctButton);
     if (letterFound === false){
-          let tries = document.querySelectorAll("li[style='display:inline']");
+    //in the html file we strictly added the default style display inline on the li element so we can get it.  
+          let tries = document.querySelectorAll("li[style='display:inline']");       
           let toHide = tries[tries.length -1];
           toHide.style.display = 'none';
           missed += 1;  
