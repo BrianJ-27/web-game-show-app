@@ -12,18 +12,22 @@ const phrases = [
 ];
 
 //** when a user clicks on the start button, the screen overlay is hidden to show gameboard 
-
-
 startGame.addEventListener('click', () => {
   reset();  
   overlay.style.display = 'none';
-  overlay.style.transition = '.5s';
+  overlay.style.transition = '1.0s';
   // Passing the phrases array as in argument to the function 
   const singleArray = getRandomPhraseAsArray(phrases);
   // pass the singleArray const variable into the function to add the phrase array to the game screen
   addPhraseToDisplay(singleArray);
 }); 
 
+
+// Note to self: character in the array is referring to the the arr[i] in my programming.. 
+
+/*-----------------------------------------------------------------------------------------------------*/ 
+//                                        **FUNCTIONS**
+/*-----------------------------------------------------------------------------------------------------*/
 const reset = () => {
   let tries = document.querySelectorAll('.tries');
     tries.forEach((element) =>{
@@ -41,11 +45,7 @@ const reset = () => {
     keyboardKeys[i].disabled = false;
   }
 }
-// Note to self: character in the array is referring to the the arr[i] in my programming.. 
 
-/*-----------------------------------------------------------------------------------------------------*/ 
-//                                        **FUNCTIONS**
-/*-----------------------------------------------------------------------------------------------------*/
 //passing the "arr" variable in will make function reusable to pass any array into this function
 const getRandomPhraseAsArray = arr => { 
 // generating a random number from 0-4 & using that number to access the index of any array
@@ -78,8 +78,6 @@ const addPhraseToDisplay = arr =>{
   }
 }
 
-
-
 //The checkLetter function will be used inside of the event listener you’ll write in the next step.
 const checkLetter = buttonPicked => {
 // should get all of the elements with a class of “letter” which was defined at the top of script
@@ -101,7 +99,7 @@ const checkWin = () => {
   if(letters.length === showClass.length){
     overlay.style.display = 'flex';
     overlay.className = 'win';
-    startGame.textContent = 'Another Round?';
+    startGame.textContent = 'Another Round ?';
   }else if (missed >= 5) {
     overlay.style.display = 'flex';
     overlay.className = 'lose';
