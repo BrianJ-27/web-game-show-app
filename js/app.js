@@ -20,11 +20,15 @@ const phrases = [
 
 //** when a user clicks on the start button, the screen overlay is hidden to show gameboard 
 startGame.addEventListener('click', () => {
+
+  //resets the game board when the start button is clicked. It will reset whether the player wins or loses
   reset();  
+  // hides the overlay screen and shows the game
   overlay.style.display = 'none';
-  overlay.style.transition = '1.0s';
+
   // Passing the phrases array as in argument to the function 
   const singleArray = getRandomPhraseAsArray(phrases);
+
   // pass the singleArray const variable into the function to add the phrase array to the game screen
   addPhraseToDisplay(singleArray);
 }); 
@@ -38,9 +42,10 @@ startGame.addEventListener('click', () => {
 
 // Resets the game when button is clicked **This function is called inside the start game listener
 const reset = () => {
-  let tries = document.querySelectorAll('.tries');
+    missed = 0;
+    let tries = document.querySelectorAll('.tries');
     tries.forEach((element) =>{
-    element.style.display = 'inline';
+      element.className = 'tries';
   })
 
   let oldPhraseLetters = document.querySelectorAll('#phrase ul > li');
@@ -96,9 +101,11 @@ the button the player has chosen.*/
         btn_match = true;
     }
   }
+  // returns a boolean value of true or false
   return btn_match;
 }
 
+// Gets all elements with a class name of 'show' and assigns it the variable showClass
 const showClass = document.getElementsByClassName('show');
 
 //** the checkWin function will also be called inside the event listener
@@ -108,7 +115,7 @@ const checkWin = () => {
     overlay.style.display = 'flex';
     overlay.className = 'win';
     startGame.textContent = 'Another Round ?';
-  //However if the user does not guess the right answer the 5th time the user loses and the lose overlay is shown   
+  //However if the user does not guess the right answer the 5th time, the user loses and the lose overlay is shown   
   }else if (missed >= 5) {
     overlay.style.display = 'flex';
     overlay.className = 'lose';
@@ -118,7 +125,7 @@ const checkWin = () => {
 
 
 /*-----------------------------------------------------------------------------------------------------*/ 
-//                                        **EVENT LISTENERS**                                          //
+//                                        **EVENT QUERTY BUTTON LISTENER**                                          //
 /*-----------------------------------------------------------------------------------------------------*/
 //Get the div element with the id of "qwerty" and assign it const variable "qwerty"
 const qwerty = document.querySelector('#qwerty');
@@ -130,10 +137,16 @@ qwerty.addEventListener('click', e => {
    correctButton.disabled = true;
    const  letterFound = checkLetter(correctButton);
     if (letterFound === false){
-    //in the html file we strictly added the default style display inline on the li element so we can get it.  
-          let tries = document.querySelectorAll("li[style='display:inline']");       
-          let toHide = tries[tries.length -1];
-          toHide.style.display = 'none';
+    /*gets the node lists of li elements with the class name of "tries" and assigns them 
+          to the variable of tries */
+          let tries = document.querySelectorAll('.tries');   
+    /* missed variable is assinged the value of 0 which would grab the first heart on the 
+          gameboard and assigns it to the variable of toHide */         
+          let toHide = tries[missed];
+    // the first indexed item gets the className of "hidden" which has the display property of hide      
+          toHide.className += ' hidden';
+     /*adds/increments the missed value by 1 so when the player clicks another wrong answer and it 
+          will then be set to the next indexed item */    
           missed += 1;  
    }
   }

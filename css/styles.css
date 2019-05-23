@@ -147,6 +147,14 @@ button {
   color: #FFF;
 }
 
+.tries{
+  display: inline;
+}
+
+.hidden{
+  display: none;
+}
+
 .start {
   background-color: var(--color-start);
 }
