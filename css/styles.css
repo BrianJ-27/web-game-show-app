@@ -344,6 +344,20 @@ template {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
+body,
+div,
+h1,
+h2,
+h3,
+div {
+  margin: 0 0;
+  padding: 0 0;
+}
+
 body {
   justify-content: space-evenly;
   flex-direction: column;
@@ -373,9 +387,9 @@ h3 {
 }
 
 button {
-  margin: 6px;
+  margin: 5px;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
+  padding: 4px 8px;
   color: #37474F;
   font-size: 20px;
   background-color: #E5E5E5;
@@ -383,6 +397,11 @@ button {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+@media (min-width: 768px) {
+  button {
+    padding: 14px 18px;
+  }
 }
 
 /* Overlay when game starts, wins or ends */
@@ -426,13 +445,20 @@ button {
 
 .letter {
   font-size: 20px;
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  margin: 0 5px 4px 0;
   color: transparent;
   background: #D2D2D2;
   border-radius: 5px;
+}
+@media (min-width: 768px) {
+  .letter {
+    padding: 15px;
+    height: 65px;
+    width: 65px;
+  }
 }
 
 .space {
@@ -443,14 +469,20 @@ button {
   color: #fff;
   background-color: #162CA2;
   border: 1px solid #fff;
-  padding: 15px 1px 0 1px;
-  height: 65px;
-  width: 65px;
+  padding: 5px;
+  margin: 0 5px 4px 0;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 20px;
   text-transform: capitalize;
   transition: all 0.5s ease-in-out;
   transform: rotateY(360deg);
+}
+@media (min-width: 768px) {
+  .show {
+    padding: 15px;
+    height: 65px;
+    width: 65px;
+  }
 }
 
 .chosen {
@@ -496,6 +528,7 @@ button {
 }
 
 .main-img {
+  height: 100%;
   background-image: url(../images/stan-lee.jpg);
   background-size: cover;
   background-repeat: no-repeat;

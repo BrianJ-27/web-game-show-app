@@ -5,13 +5,19 @@
 // hidden phrase letter buttons
 .letter {
   font-size: $font-size-medium;
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  margin: 0 5px 4px 0;
   color: transparent;
   background: $color-neutral-light;
   border-radius: 5px;
+  @include mq('md'){
+    padding: 15px;
+    height: 65px;
+    width: 65px;
+  }
+  
 }
 
 //the space between the hidden letters
@@ -24,13 +30,17 @@
   color: #fff;
   background-color: #162CA2;
   border: 1px solid #fff;
-  padding: 15px 1px 0 1px;
-  height: 65px;
-  width: 65px;
+  padding: 5px;
+  margin: 0 5px 4px 0;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: $font-size-medium;
   text-transform: capitalize;
   transition: all .5s ease-in-out;
   transform: rotateY(360deg);
+  @include mq('md'){
+    padding: 15px;
+    height: 65px;
+    width: 65px;
+  }
 }
 
