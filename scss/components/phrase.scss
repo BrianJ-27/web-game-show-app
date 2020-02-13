@@ -1,0 +1,36 @@
+//*==================================
+// Phrase Styles
+//*==================================
+
+// hidden phrase letter buttons
+.letter {
+  font-size: $font-size-medium;
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  color: transparent;
+  background: $color-neutral-light;
+  border-radius: 5px;
+}
+
+//the space between the hidden letters
+.space {
+  width: 15px;
+}
+
+// styling for when user selects the correct letter button
+.show {
+  color: #fff;
+  background-color: #162CA2;
+  border: 1px solid #fff;
+  padding: 15px 1px 0 1px;
+  height: 65px;
+  width: 65px;
+  border-radius: 5px;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  transition: all .5s ease-in-out;
+  transform: rotateY(360deg);
+}
+

@@ -1,0 +1,50 @@
+//*==================================
+// Base Styles
+//*==================================
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  justify-content: space-evenly;
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+}
+
+li, ol, ul {
+  padding: 0;
+  display: inline-block;
+}
+
+h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: $font-size-large;
+  margin: 0;
+  color: #FFF;
+  margin-bottom: 3em;
+}
+
+h3{
+  color: #162CA2;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: $font-size-large;
+
+}
+
+
+button {
+  margin: 6px;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  color: $color-keys;
+  font-size: $font-size-medium;
+  background-color: $color-keys-light;
+  border-radius: 5px;
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}

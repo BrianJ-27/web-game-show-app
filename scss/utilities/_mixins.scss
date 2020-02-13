@@ -1,0 +1,46 @@
+@mixin flex_me (
+    $dir:null,
+    $wrap:null,
+    $just:null,
+    $align:null)
+    {
+      display: flex;
+      flex-direction: $dir;
+      flex-wrap: $wrap;
+      justify-content: $just;
+      align-items: $align;
+    }
+
+@mixin centered {
+  max-width: 65em;
+  display: block;
+  margin: 0 auto;
+}
+// add a gray filter on elements
+@mixin grayscale {
+  filter: grayscale(100%);
+  transform: scale(1.0);
+  transition: all .4s ease-in;
+  &:hover{
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    @content;
+  }
+}
+
+// Media Query
+@mixin mq($break){
+  $value: map-get($breakpoints, $break);
+  $md: map-get($breakpoints, 'md');
+
+  @if $value > $md {
+    @media (min-width: $value){
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: $value){
+      @content;
+   }
+  }
+}

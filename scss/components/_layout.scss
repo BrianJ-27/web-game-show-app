@@ -1,0 +1,38 @@
+//*==================================
+// Layout
+//*==================================
+
+/* Overlay when game starts, wins or ends */
+#overlay {
+  @include flex_me($dir:column, $just:center);
+  position: fixed;
+  z-index: 99;
+  color: $white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+//this is added to DOM when user starts game
+.hidden{
+  display: none;
+}
+
+.main-container {
+  @include flex_me($dir:column, $just:space-around);
+  height: 100%;
+  max-height: 900px;
+  text-align: center;
+}
+
+.section {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Keyboard Styles */
+.keyrow {
+  @include flex_me($just:center);
+}
