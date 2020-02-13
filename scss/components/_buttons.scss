@@ -6,30 +6,30 @@
 .chosen {
   background: $color-neutral;
   border-radius: 5px;
-  font-size: $font-size-medium;
-  color: #FFFFFF;
+  font-size: $font-medium;
+  color: $white;
 }
 
 //button style when game is over
 .btn__reset {
   padding: 8px;
   margin: 50px auto;
-  background: #FFFFFF;
+  background: $white;
   border-radius: 5px;
-  font-size: $font-size-medium;
+  font-size: $font-medium;
 }
 
 // button styles when user starts game
 .start a {
-  color:  #162CA2;
-  background-color: white;
+  color: $primary-key-color;
+  background-color: $white;
   transition: all .4s ease-in-out;
   cursor: pointer;
 }
 
 .start a:hover{
-  background:  #162CA2;
-  color: white;
+  background: $primary-key-color;
+  color: $white;
 }
 
 // button styles when user wins game

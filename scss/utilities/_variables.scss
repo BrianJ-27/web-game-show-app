@@ -20,16 +20,14 @@ $transition: all .2s ease-in-out;
 $primary-key-color: $hero-blue;
 $color-win : $grass;
 $color-lose : $cherry-punch;
-// $form-field-color: antiquewhite;
 
 //font
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+$font-size-large: 60px;
+$font-medium: 20px;
+$font-size-small: 10px;
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 @import url('https://fonts.googleapis.com/css?family=Oxygen|PT+Sans+Narrow');
 $main-font: 'PT Sans Narrow', sans-serif;
-$font-size-large: 60px;
-$font-size-medium: 20px;
-$font-size-small: 10px;
 $secondary-font: 'Oxygen', sans-serif;
 
 //Typography
