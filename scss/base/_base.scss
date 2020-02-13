@@ -6,7 +6,24 @@
   box-sizing: border-box;
 }
 
+html, body{
+  height: 100%;
+}
+
+body,
+div,
+h1,
+h2,
+h3,
+div,
+ul,
+li{
+  margin: 0 0;
+  padding: 0 0;
+}
+
 body {
+  font-family: $main-font;
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
@@ -21,7 +38,7 @@ li, ol, ul {
 h2 {
   margin: 0;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $secondary-font;
   font-size: $font-size-large;
   margin: 0;
   color: #FFF;
@@ -29,22 +46,25 @@ h2 {
 }
 
 h3{
-  color: #162CA2;
+  color: $primary-key-color;
   text-shadow: 2px 2px 4px #000000;
   font-size: $font-size-large;
-
+  font-family: $secondary-font;
 }
 
 
 button {
-  margin: 6px;
+  margin: 5px;
   border: 1px solid transparent;
-  padding: .5rem 1rem;
+  padding: 4px 8px;
   color: $color-keys;
-  font-size: $font-size-medium;
+  font-size: 20px;
   background-color: $color-keys-light;
   border-radius: 5px;
   -webkit-transition: $transition;
   -o-transition: $transition;
   transition: $transition;
+  @include mq('md'){
+    padding: 14px 18px;
+  }
 }
