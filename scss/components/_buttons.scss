@@ -1,0 +1,43 @@
+//*==================================
+// Buttons
+//*==================================
+
+//keyboard buttons in the game when a user chooses a letter
+.chosen {
+  background: $color-neutral;
+  border-radius: 5px;
+  font-size: $font-size-medium;
+  color: #FFFFFF;
+}
+
+//button style when game is over
+.btn__reset {
+  padding: 8px;
+  margin: 50px auto;
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-size: $font-size-medium;
+}
+
+// button styles when user starts game
+.start a {
+  color:  #162CA2;
+  background-color: white;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+}
+
+.start a:hover{
+  background:  #162CA2;
+  color: white;
+}
+
+// button styles when user wins game
+.win a {
+  color: $color-win;
+}
+
+// button styles when user loses game
+.lose a {
+  color: $color-lose;
+}

@@ -1,0 +1,43 @@
+//*==================================
+// Variables
+//*==================================
+
+//Font Colors
+
+$hero-blue: #162CA2;
+$white: #fff;
+$black: #000;
+$grass: #78CF82;
+$cherry-punch: #D94545;
+$color-neutral: #445069;
+$color-neutral-light: #D2D2D2;
+$color-keys: #37474F;
+$color-keys-light: #E5E5E5;
+
+$transition: all .2s ease-in-out;
+
+//Site Colors
+$primary-key-color: $hero-blue;
+$color-win : $grass;
+$color-lose : $cherry-punch;
+// $form-field-color: antiquewhite;
+
+//font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Oxygen|PT+Sans+Narrow');
+$main-font: 'PT Sans Narrow', sans-serif;
+$font-size-large: 60px;
+$font-size-medium: 20px;
+$font-size-small: 10px;
+$secondary-font: 'Oxygen', sans-serif;
+
+//Typography
+$base-font-size: 16px;
+$boldly-thick: bold;
+
+// Media Query Breakpoint Map
+    $breakpoints: (
+    'md': 768px,
+    'lg': 992px,
+    );
