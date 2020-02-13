@@ -13,6 +13,7 @@
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
   --font-size-medium: 20px;
+  --font-size-small: 10px;
   --transition: all .2s ease-in-out;
 }
 
@@ -27,6 +28,10 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-image: url(../images/stan-lee.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 li, ol, ul {
@@ -41,6 +46,7 @@ h2 {
   font-size: var(--font-size-large);
   margin: 0;
 }
+
 
 button {
   margin: 6px;
@@ -72,7 +78,8 @@ button {
 /* Title */
 
 .header {
-  color: var(--color-start);
+  color: #162CA2;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 /* Phrase */
@@ -93,15 +100,17 @@ button {
 }
 
 .show {
-  color: #000;
-  background-color: #76CE82;
-  border: 1px solid #000;
+  color: #fff;
+  background-color: #162CA2;
+  border: 1px solid #fff;
   padding: 15px 1px 0 1px;
   height: 65px;
   width: 65px;
   border-radius: 5px;
   font-size: 1.5em;
-  transition: background-color .5s;
+  text-transform: capitalize;
+  transition: all .5s ease-in-out;
+  transform: rotateY(360deg);
 }
 
 
