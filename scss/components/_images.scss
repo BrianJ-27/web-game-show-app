@@ -2,36 +2,30 @@
 // Images
 //*==================================
 
-//Opening image before you start the game
-.start {
-  background-image: url(../images/marvel.jpg);
+.start,.main-img,.win,.lose{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+//Opening image before you start the game
+.start {
+  background-image: url(../images/marvel.jpg);
 }
 
 //The main background image after you start the game
 .main-img{
   height: 100%;
   background-image: url(../images/stan-lee.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 //image when you win the game
 .win {
   background-image: url(../images/avengers-win.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 //image when you lose the game
 .lose {
   background-image: url(../images/game-over.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; 
 }
 

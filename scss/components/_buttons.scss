@@ -17,6 +17,7 @@
   background: $white;
   border-radius: 5px;
   font-size: $font-medium;
+  cursor: pointer;
 }
 
 // button styles when user starts game
@@ -24,7 +25,6 @@
   color: $primary-key-color;
   background-color: $white;
   transition: all .4s ease-in-out;
-  cursor: pointer;
 }
 
 .start a:hover{

@@ -501,13 +501,13 @@ button {
   background: #fff;
   border-radius: 5px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .start a {
   color: #162CA2;
   background-color: #fff;
   transition: all 0.4s ease-in-out;
-  cursor: pointer;
 }
 
 .start a:hover {
@@ -523,33 +523,27 @@ button {
   color: #D94545;
 }
 
-.start {
-  background-image: url(../images/marvel.jpg);
+.start, .main-img, .win, .lose {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.start {
+  background-image: url(../images/marvel.jpg);
 }
 
 .main-img {
   height: 100%;
   background-image: url(../images/stan-lee.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .win {
   background-image: url(../images/avengers-win.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .lose {
   background-image: url(../images/game-over.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
