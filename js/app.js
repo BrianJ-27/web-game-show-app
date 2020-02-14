@@ -2,6 +2,7 @@
 //                                        **VARIABLES**                                                //
 /*-----------------------------------------------------------------------------------------------------*/
 const startGame = document.getElementsByClassName('btn__reset')[0];
+const startTitle = document.querySelector('.title');
 const overlay = document.querySelector('#overlay');
 const letters = document.getElementsByClassName('letter');
 let phrase = document.querySelector('#phrase ul');
@@ -114,12 +115,16 @@ const checkWin = () => {
   if(letters.length === showClass.length){
     overlay.style.display = 'flex';
     overlay.className = 'win';
-    startGame.textContent = 'Another Round ?';
+    startGame.textContent = 'Another Round?';
+    startTitle.textContent = 'You Won!';
+    startTitle.style.marginBottom = '0em';
   //However if the user does not guess the right answer the 5th time, the user loses and the lose overlay is shown   
   }else if (missed >= 5) {
     overlay.style.display = 'flex';
     overlay.className = 'lose';
     startGame.textContent = 'Try Again?';
+    startTitle.textContent = 'Game Over';
+    startTitle.style.marginBottom = '0em';
   }
 };
 
