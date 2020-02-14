@@ -47,7 +47,7 @@ const reset = () => {
     let tries = document.querySelectorAll('.tries');
     tries.forEach((element) =>{
       element.className = 'tries';
-  })
+  });
 
   let oldPhraseLetters = document.querySelectorAll('#phrase ul > li');
   for (let i = 0; i< oldPhraseLetters.length; i++){
@@ -59,7 +59,7 @@ const reset = () => {
     keyboardKeys[i].className = keyboardKeys[i].className.replace('chosen', '');
     keyboardKeys[i].disabled = false;
   }
-}
+};
 
 //passing the "arr" variable in will make function reusable to pass any array into this function
 const getRandomPhraseAsArray = arr => { 
@@ -67,8 +67,8 @@ const getRandomPhraseAsArray = arr => {
    let randomArray = arr[Math.floor((Math.random() * phrases.length))]; 
  // Return a new letter character array for that split the strings inside the array into a new single line array 
   let randomPhrase = randomArray.split('');
-    return randomPhrase  // ["i","n", "", "t",]
-   }
+    return randomPhrase; // ["i","n", "", "t",]
+   };
 
 const addPhraseToDisplay = arr =>{
 /* loop through an array and execute the following tasks: 
@@ -88,7 +88,7 @@ const addPhraseToDisplay = arr =>{
         letter.className = 'space';
       }
   }
-}
+};
 
 //** The checkLetter function will be used inside of the event listener you’ll write in the next step.
 const checkLetter = buttonPicked => {
@@ -104,7 +104,7 @@ the button the player has chosen.*/
   }
   // returns a boolean value of true or false
   return btn_match;
-}
+};
 
 // Gets all elements with a class name of 'show' and assigns it the variable showClass
 const showClass = document.getElementsByClassName('show');
