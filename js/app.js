@@ -1,6 +1,7 @@
 /*-----------------------------------------------------------------------------------------------------*/
 //                                        **VARIABLES**                                                //
 /*-----------------------------------------------------------------------------------------------------*/
+
 const startGame = document.querySelector(".btn__reset");
 const showClass = document.getElementsByClassName("show");
 const qwerty = document.querySelector("#qwerty");
