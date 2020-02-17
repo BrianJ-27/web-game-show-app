@@ -71,7 +71,7 @@ class UI {
     }
   }
 
-  reset () {
+  resetGame () {
     const variable = new Variables();
     missed = 0;
     let tries = document.querySelectorAll(".tries");
@@ -92,7 +92,7 @@ class UI {
 document.querySelector(".btn__reset").addEventListener("click", () => {
   const ui = new UI();
   const variable = new Variables();
-  ui.reset();
+  ui.resetGame();
   variable.overlay.style.display = "none";
   const addRandomPhrase = ui.getRandomPhraseAsArray(variable.phrases);
   ui.addPhraseToDisplay(addRandomPhrase);
