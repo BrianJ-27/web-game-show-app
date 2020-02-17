@@ -386,6 +386,12 @@ h3 {
   text-shadow: 2px 2px 4px #000000;
   font-size: 60px;
   font-family: "Righteous", cursive;
+  margin-top: 1em;
+}
+@media (min-width: 992px) {
+  h3 {
+    font-size: 80px;
+  }
 }
 
 button {
