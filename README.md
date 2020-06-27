@@ -2,7 +2,7 @@
 
 __FEWD Treehouse Project 6__
 
-> Created a cross browser compatible and moble first guessing game
+> Created a cross browser compatible and moble first word guessing game
 
 > This word guessing is Marvel inspired trivia because MARVEL IS LIT! 
 
