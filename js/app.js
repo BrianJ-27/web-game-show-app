@@ -17,13 +17,19 @@ class Variables {
       "in the endgame now", 
       "the amazing spiderman",
       "thors hammer",
-      "the mighty mjolnir"
+      "the mighty mjolnir",
+      "shang chi",
+      "the ten rings"
     ];
   }
 }
 
 /*=-=-=-=-=-GAME UI FUNCTION/METHODS=-=-=-=-=-*/
 class UI {
+  constructor(){
+    this.variable = new Variables();
+  }
+   
   getRandomPhraseAsArray (arr){
     let randomArray = arr[Math.floor(Math.random() * arr.length)];
     let randomPhrase = randomArray.split("");
@@ -32,22 +38,20 @@ class UI {
 
    addPhraseToDisplay (arr){
     for (let i = 0; i < arr.length; i += 1) {
-      const variable = new Variables();
       let letter = document.createElement("li");
       letter.innerText = arr[i];
-      variable.phrase.appendChild(letter);
+      this.variable.phrase.appendChild(letter);
       letter.innerHTML !== " " ? letter.className = "letter" : letter.className = "space";
     }
   }
 
   checkLetter (buttonPicked) {
-    const variable = new Variables();
     let btn_match = false;
-    for (let i = 0; i < variable.letters.length; i += 1) {
-      let myLetter = variable.letters[i].textContent.toUpperCase();
+    for (let i = 0; i < this.variable.letters.length; i += 1) {
+      let myLetter = this.variable.letters[i].textContent.toUpperCase();
       let myButton = buttonPicked.textContent.toUpperCase();
       if (myLetter === myButton) {
-        variable.letters[i].className += " show";
+        this.variable.letters[i].className += " show";
         btn_match = true;
       }
     }
@@ -55,30 +59,28 @@ class UI {
   }
 
   checkWin () {
-    const variable = new Variables();
-    if (variable.letters.length === variable.showClass.length) {
-      variable.overlay.style.display = "flex";
-      variable.overlay.className = "win";
-      variable.startGame.textContent = "Another Round?";
-      variable.startTitle.textContent = "You Won!";
-      variable.startTitle.style.marginBottom = "0em";
+    if (this.variable.letters.length === this.variable.showClass.length) {
+      this.variable.overlay.style.display = "flex";
+      this.variable.overlay.className = "win";
+      this.variable.startGame.textContent = "Another Round?";
+      this.variable.startTitle.textContent = "You Won!";
+      this.variable.startTitle.style.marginBottom = "0em";
     } else if (missed >= 5) {
-      variable.overlay.style.display = "flex";
-      variable.overlay.className = "lose";
-      variable.startGame.textContent = "Try Again?";
-      variable.startTitle.textContent = "Game Over";
-      variable.startTitle.style.marginBottom = "0em";
+      this.variable.overlay.style.display = "flex";
+      this.variable.overlay.className = "lose";
+      this.variable.startGame.textContent = "Try Again?";
+      this.variable.startTitle.textContent = "Game Over";
+      this.variable.startTitle.style.marginBottom = "0em";
     }
   }
 
   resetGame () {
-    const variable = new Variables();
     missed = 0;
     let tries = document.querySelectorAll(".tries");
     tries.forEach(element => element.className = "tries");
   
     let oldPhraseLetters = document.querySelectorAll("#phrase ul > li");
-    oldPhraseLetters.forEach(resetLetter => variable.phrase.removeChild(resetLetter));
+    oldPhraseLetters.forEach(resetLetter => this.variable.phrase.removeChild(resetLetter));
   
     let keyboardKeys = document.querySelectorAll(".chosen");
     keyboardKeys.forEach(resetKeys => {
